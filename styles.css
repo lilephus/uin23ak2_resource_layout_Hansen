@@ -1,0 +1,98 @@
+body{
+    font-family: 'Sofia Sans', sans-serif;
+    align-self: auto;
+}
+.header {
+    text-align: left;
+    border: 1px solid grey;
+    padding:70px;
+    font-size: 40px;
+    font-weight: bold;
+    color: grey;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 3%;
+    box-sizing: border-box;
+  }
+  /* justify-content: space-between; */
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;  
+    margin: 50px;
+    margin-bottom: -20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+    
+  }
+  /* navbar Boxes */
+  .navbar-item {
+    display: block;
+    /* width: 200px; */
+    flex-wrap: wrap;
+    text-align: center;
+    /* height: 80px; */
+    padding: 20px;
+    border: 1px solid grey;
+    font-size: 30px;
+    font-weight: medium;
+    /* text-overflow: ellipsis; */
+    color: grey;
+    margin-right: 15px;
+    border-bottom: 1px solid #25DFE6;
+    text-align: center;
+    
+  }
+  
+
+  /* .navbar-item:not(#category1) {
+    background-color: white;
+  } */
+  .navbar-item:hover {
+    background-color: #25DFE6;
+    border: 1px solid #25DFE6;
+    color: white;
+  }
+  
+  .main-box {
+    /* border: 2px solid grey; */
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-top: 10px solid grey;
+    padding: 2rem;
+    margin: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-top-color: #25DFE6;
+    
+  }
+ 
+  .main-box-title {
+    font-size: 35px;
+    font-weight: bold;
+    color: grey;
+  }
+  
+  .main-box-text {
+    font-size: 28px;
+    font-weight: medium;
+    color: grey;
+    max-width: 60%;
+  }
+  
+  .bullet-list {
+    margin: 20px;
+    padding:10px;
+    
+    color: grey;
+    font-size: 28px;
+    font-weight: medium;
+    
+    }
+    .bullet-list a {
+        color: #25DFE6;
+        }
