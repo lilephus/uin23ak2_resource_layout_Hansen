@@ -97,6 +97,7 @@ const mainBoxTitle = document.getElementById("main-box-title");
 const mainBoxText = document.getElementById("main-box-text");
 const bulletList = document.querySelector(".bullet-list");
 
+// mappa kategoriene til navbar-items
 resources.map((resource) => {
     const navbarItem = document.createElement("button");
     navbarItem.id = "navbar-item";
@@ -104,6 +105,7 @@ resources.map((resource) => {
     navbar.appendChild(navbarItem);
 });
 
+//  Lagt event listener til navbar items
 navbar.addEventListener("click", (e) => {
     if (e.target.id === "navbar-item") {
         const category = e.target.innerHTML;

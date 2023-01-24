@@ -3,7 +3,7 @@ body{
   align-self: auto;
 }
 
-
+/* header */
 .header {
   padding: 50px;
   margin-top: -4%;
@@ -11,11 +11,11 @@ body{
   text-align: center;
   font-weight: bold;
   color: grey;
-  border: 1px solid grey;
+  border: 1px solid rgb(186, 181, 181);
   margin: 0 20%;
   position: relative;
 }
-
+/* navbar  hele */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -25,65 +25,80 @@ body{
   margin: 50px;
   margin-right: 20%;    
 }
+/* navbar hele */
 .navbar {
   margin-bottom: -20px;
   margin-left: 19.6%;
   margin-right: 20%; 
 }
+/* navbar-item som er en class med navn navbar-1-2-3  på html osv */
 #navbar-item.selected {
   background-color: #25DFE6;
   color: white;
 }
 
-
+/* navbar-item som er en class med navn navbar-1-2-3  på html osv */
 #navbar-item {
   margin: 0 7px;
   text-align: center;
-  padding: 50px;
+  padding: 25px 50px;
+  font-size: 20px;
+  font-weight: medium;
+  color: grey;
+  border: 1px solid rgb(186, 181, 181);
+  border-bottom: #25DFE6;
+  
 }
+/* navbar-item1, ble brukt å designe navbar-items */
 .navbar-item1{
   display: none;
 }
+/* navbar-item som er en class med navn navbar-1-2-3  på html osv */
 .navbar-item2{
   display: none;
 }
+/* hover effect for navbar-item */
 #navbar-item:hover {
   background-color: #25DFE6;
   border: 1px solid #25DFE6;
   color: white;
 }
 
+/* <!-- Main box --> */
 .main-box {
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  border-top: 10px solid grey;
+  border: 1px solid rgb(186, 181, 181);
+  border-top: 10px solid #25DFE6;
   padding: 2rem;
   margin: 20px;
   margin-left: 20%;
   margin-right: 20%;
-  border-top-color: #25DFE6;
-  
 }
-
+/* <!-- Main box title --> */
+#main-box-title{
+  font-size: 24px;
+  font-weight: 900;
+  color: grey;
+}
+/* <!-- Main box tekst --> */
 #main-box-text {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: medium;
   color: grey;
   max-width: 60%;
 }
-
+/* List med lenker  --> */
 .bullet-list {
   margin: 20px;
   padding: 10px;
   
   color: grey;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: medium;
   
   }
+  /* List med lenker  --> */
   .bullet-list a {
       color: #25DFE6;
       }
 
-
+    
