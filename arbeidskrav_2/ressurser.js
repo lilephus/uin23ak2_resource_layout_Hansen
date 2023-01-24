@@ -94,3 +94,114 @@ const resources = [
         ]
     },
 ]
+
+
+
+
+let menuHTML = "";
+
+resources.map(resource => {
+    menuHTML += `<h2>${resource.category}</h2>`;
+    resource.sources.map(source => {
+        menuHTML += `<a href="${source.url}" target="_blank">${source.title}</a>`;
+    });
+});
+
+
+document.getElementById("resources-list").innerHTML = menuHTML;
+
+document.querySelector("").innerHTML=menuHTML;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let menuHTML = ""
+// let menuHTML2 = ""
+
+//         resources.map(category => {
+//             menuHTML = `<button class="categorybtn">${category.category}</button>`;
+//             menuHTML2 += `<h2>${category.menuheader}</h2>`;
+//             menuHTML2 += `<p>${category.text}</p>`;
+//         category.sources.map(sources => {
+//             menuHTML2 += `<ul><li><a href="${sources.url}">${sources.title}</a></li></ul>`
+//         });
+//         } );
+            
+//         document.querySelector("#categories").innerHTML=menuHTML;
+//         document.querySelector(".category-content").innerHTML=menuHTML;
