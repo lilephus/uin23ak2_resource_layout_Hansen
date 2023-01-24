@@ -91,37 +91,47 @@ const resources = [ {
                     ]
             },
     ];
-    
-    const menuHTML = document.querySelector('.navbar');
-    const mainBox = document.querySelector('.main-box');
-    const bulletList = document.querySelector('.bullet-list');
-    
-    resources.forEach(resource => {
-    let newItem = document.createElement('div');
-    newItem.classList.add('navbar-item');
-    newItem.innerHTML = resource.category;
-    menuHTML.appendChild(newItem);
-    newItem.addEventListener('click', () => {
-    mainBox.innerHTML = resource.text;
-    bulletList.innerHTML = "";
-    resource.sources.forEach(source => {
-    let newSource = document.createElement('li');
-    newSource.innerHTML = `<a href="${source.url}">${source.title}</a>`;
-    bulletList.appendChild(newSource);
-    });
-    });
-    });
 
-    categoryButton.addEventListener('click', () => {
-        mainBox.innerHTML = `
-            <br>
-            <div class="main-box-title">${resource.category}</div>
-            <br>
-            <div class="main-box-text">${resource.text}</div>
-            <br>
-            <div class="main-box-sources">Sources:</div>
-            <ul class="bullet-list">
-        `;
-    } );
+const navbar = document.querySelector(".navbar");
+const mainBoxTitle = document.getElementById("main-box-title");
+const mainBoxText = document.getElementById("main-box-text");
+const bulletList = document.querySelector(".bullet-list");
 
-    
+resources.map((resource) => {
+    const navbarItem = document.createElement("button");
+    navbarItem.id = "navbar-item";
+    navbarItem.innerHTML = resource.category;
+    navbar.appendChild(navbarItem);
+});
+
+navbar.addEventListener("click", (e) => {
+    if (e.target.id === "navbar-item") {
+        const category = e.target.innerHTML;
+        const filteredResource = resources.find((resource) => resource.category === category);
+        mainBoxTitle.innerHTML = filteredResource.category;
+        mainBoxText.innerHTML = filteredResource.text;
+        bulletList.innerHTML = "";
+        filteredResource.sources.map((source) => {
+            const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = source.url;
+            link.innerHTML = source.title;
+            link.target = "_blank";
+            listItem.appendChild(link);
+            bulletList.appendChild(listItem);
+        });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
