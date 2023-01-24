@@ -91,36 +91,48 @@ const resources = [ {
                     ]
             },
     ];
-
+// Velger elementer på HTML-siden etter klasse og ID ved å bruke metodene document.querySelector() og document.getElementById()//
 const navbar = document.querySelector(".navbar");
 const mainBoxTitle = document.getElementById("main-box-title");
 const mainBoxText = document.getElementById("main-box-text");
 const bulletList = document.querySelector(".bullet-list");
 
-// mappa kategoriene til navbar-items
+// mappa kategoriene til navbar-items.Altså Kode går gjennom resourceslisten i resources.js og lager en knapp for hver kategori.
 resources.map((resource) => {
+    // oppretter nytt knappeelement
     const navbarItem = document.createElement("button");
+    // Setter knapens ID og innerHTML
     navbarItem.id = "navbar-item";
     navbarItem.innerHTML = resource.category;
+    //legger knappen til navbar
     navbar.appendChild(navbarItem);
 });
 
-//  Lagt event listener til navbar items
+//  Legger til click event listener til navbar
 navbar.addEventListener("click", (e) => {
+    // sjekker om det klikkede elementet er et navbar item
     if (e.target.id === "navbar-item") {
+        // Filtrering av resources array til å finne den resource som matcher den klikkede item category.
         const category = e.target.innerHTML;
         const filteredResource = resources.find((resource) => resource.category === category);
+        // Oppdater mainBoxTitle og mainBoxText elementer med kategorien og teksten til den filtrerte resource
         mainBoxTitle.innerHTML = filteredResource.category;
         mainBoxText.innerHTML = filteredResource.text;
+        // sletter bulletList-elementet
         bulletList.innerHTML = "";
+        // Går gjennom sources til filtrerte resource og lager list items
         filteredResource.sources.map((source) => {
+            // Lager nye list item og link elements
             const listItem = document.createElement("li");
             const link = document.createElement("a");
+            // Setter href og innerHTML til lenker
             link.href = source.url;
             link.innerHTML = source.title;
+            // Legger link til list item
             link.target = "_blank";
             listItem.appendChild(link);
             bulletList.appendChild(listItem);
+            // legger list item til bulletList
         });
     }
 });
