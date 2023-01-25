@@ -96,8 +96,9 @@ const navbar = document.querySelector(".navbar");
 const mainBoxTitle = document.getElementById("main-box-title");
 const mainBoxText = document.getElementById("main-box-text");
 const bulletList = document.querySelector(".bullet-list");
+//Når du er på side uten å ha klikka noe skal bullet-list lenker ikke vises
+bulletList.style.display = "none";
 
-// mappa kategoriene til navbar-items.Altså Kode går gjennom resourceslisten i resources.js og lager en knapp for hver kategori.
 resources.map((resource) => {
     // oppretter nytt knappeelement
     const navbarItem = document.createElement("button");
@@ -107,7 +108,6 @@ resources.map((resource) => {
     //legger knappen til navbar
     navbar.appendChild(navbarItem);
 });
-
 //  Legger til click event listener til navbar
 navbar.addEventListener("click", (e) => {
     // sjekker om det klikkede elementet er et navbar item
@@ -118,9 +118,10 @@ navbar.addEventListener("click", (e) => {
         // Oppdater mainBoxTitle og mainBoxText elementer med kategorien og teksten til den filtrerte resource
         mainBoxTitle.innerHTML = filteredResource.category;
         mainBoxText.innerHTML = filteredResource.text;
-        // sletter bulletList-elementet
+        // bulletList.style.display = "block"; og bulletList.innerHTML = ""; gjør slikk at bullet-list vises når en av navbar-items er klikket, og å oppdatere bullet-list med opdatterte innhold.
+        bulletList.style.display = "block";
         bulletList.innerHTML = "";
-        // Går gjennom sources til filtrerte resource og lager list items
+        // Går gjennom sources til de filtrerte resource og lager list items
         filteredResource.sources.map((source) => {
             // Lager nye list item og link elements
             const listItem = document.createElement("li");
@@ -132,19 +133,23 @@ navbar.addEventListener("click", (e) => {
             link.target = "_blank";
             listItem.appendChild(link);
             bulletList.appendChild(listItem);
-            // legger list item til bulletList
+                        // legger list item til bulletList
         });
     }
 });
 
+// For å bytte farger when navbar-items er clicked 
+let navbarItems = document.querySelectorAll(".navbar button");
 
+navbarItems.forEach(function(navbarItem) {
+    navbarItem.addEventListener("click", function() {
+        navbarItems.forEach(function(item) {
+            item.style.backgroundColor = "";
+        });
+        this.style.backgroundColor = "#25DFE6";
 
-
-
-
-
-
-
+    });
+});
 
 
 
